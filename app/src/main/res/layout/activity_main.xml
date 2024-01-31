@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.85"
+        android:background="@color/material_dynamic_neutral70"
+        android:fontFamily="@font/archivo_black"
+        android:gravity="center_vertical"
+        android:onClick="funcEqual"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="60sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.99"
+        android:background="@color/material_dynamic_neutral70"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSeven"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:rotationX="360"
+            android:rotationY="360"
+            android:text="7"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonEight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="8"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonNine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="9"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonDiv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/operatorbutton"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcAritmichs"
+            android:text="/"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.99"
+        android:background="@color/material_dynamic_neutral70"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button1Four"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonFive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonSix"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="6"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonMulti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/operatorbutton"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcAritmichs"
+            android:text="X"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.99"
+        android:background="@color/material_dynamic_neutral70"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonThree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/operatorbutton"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcAritmichs"
+            android:text="-"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.99"
+        android:background="@color/material_dynamic_neutral70"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonZero"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/buttondesign"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcNumber"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonEqual"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/equalbutton"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcEqual"
+            android:text="="
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/operatorbutton"
+            android:ellipsize="end"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:onClick="funcAritmichs"
+            android:text="+"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="48sp" />
+
+    </LinearLayout>
+</LinearLayout>
