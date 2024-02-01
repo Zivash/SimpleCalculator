@@ -1,6 +1,7 @@
 package com.example.firstapp;
 
-import static java.lang.Integer.*;
+import static java.lang.Double.parseDouble;
+//import static java.lang.Integer.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +13,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView result;
-    static int numberOne = 0;
-    static int numberTwo = 0;
-    static int numberTwoFlag = 1;
+    static double numberOne = 0;
+    static double numberTwo = 0;
+    static boolean numberTwoFlag = false;
+    static boolean arithmeticFunc = false;
+    static boolean afterEqual = false;
     static String arithmetic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,51 +30,86 @@ public class MainActivity extends AppCompatActivity {
 
     public void funcNumber(View view) {
         Button button = (Button) view;
-
         String str = button.getText().toString();
 
-        if(result.getText().toString().equals("0") || numberTwoFlag == 0) {
+        if(result.getText().toString().equals("0") || arithmeticFunc || afterEqual) {
             result.setText(str);
-            numberTwoFlag = 1;
+            //arithmeticFunc = false;
+            afterEqual = false;
         }
-        else result.append(str);
-
+        else{
+            result.append(str);
+        }
+        arithmeticFunc = false;
     }
 
-    public void funcAritmichs(View view) {
+    public void funcArithmetics(View view) {
         Button button = (Button) view;
-
-        numberTwoFlag = 0;
-
-        numberOne = parseInt(result.getText().toString());
-
         String str = button.getText().toString();
-        
-        arithmetic = str;
 
-        result.setText(str);
+        if(numberTwoFlag)
+        {
+            funcEqual(view);
+        }
+
+        if (!arithmeticFunc) {
+            numberOne = parseDouble(result.getText().toString());
+            arithmeticFunc = true;
+            numberTwoFlag = true;
+        }
+        arithmetic = str;
+    }
+
+    public void funcDelete(View view) {
+
+        if(result.length() == 1)
+        {
+            result.setText("0");
+        }
+        else {
+            result.setText(result.getText().toString().toCharArray(), 0, result.length() - 1);
+        }
     }
 
     public void funcEqual(View view) {
-        Button button = (Button) view;
 
-        numberTwo = parseInt(result.getText().toString());
+        if(numberTwoFlag) {
+            numberTwo = parseDouble(result.getText().toString());
 
-        switch(arithmetic) {
-            case "+":
-                result.setText(String.valueOf(numberOne+numberTwo));
-                break;
-            case "-":
-                result.setText(String.valueOf(numberOne-numberTwo));
-                break;
-            case "X":
-                result.setText(String.valueOf(numberOne*numberTwo));
-                break;
-            case "/":
-                result.setText(String.valueOf(numberOne/numberTwo));
+            switch (arithmetic) {
+                case "+":
+                    if (numberOne + numberTwo == (int) (numberOne + numberTwo)) {
+                        result.setText(String.valueOf((int) (numberOne + numberTwo)));
+                    } else {
+                        result.setText(String.valueOf(numberOne + numberTwo));
+                    }
+                    break;
+                case "-":
+                    if (numberOne - numberTwo == (int) (numberOne - numberTwo)) {
+                        result.setText(String.valueOf((int) (numberOne - numberTwo)));
+                    } else {
+                        result.setText(String.valueOf(numberOne - numberTwo));
+                    }
+                    break;
+                case "X":
+                    if (numberOne * numberTwo == (int) (numberOne * numberTwo)) {
+                        result.setText(String.valueOf((int) (numberOne * numberTwo)));
+                    } else {
+                        result.setText(String.valueOf(numberOne * numberTwo));
+                    }
+                    break;
+                case "/":
+                    if (numberOne / numberTwo == (int) (numberOne / numberTwo)) {
+                        result.setText(String.valueOf((int) (numberOne / numberTwo)));
+                    } else {
+                        result.setText(String.valueOf(numberOne / numberTwo));
+                    }
+            }
+
+            numberTwoFlag = false;
+            arithmeticFunc = false;
+            afterEqual = true;
         }
-
-        numberTwoFlag = 0;
-
     }
+
 }
